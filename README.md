@@ -71,7 +71,7 @@ main();
 client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
 
 
-|場所|
+|場所|||
 |:---|:---:|---:|
 |左上|中上|右上|
 |左中 |中中 |右中 |
