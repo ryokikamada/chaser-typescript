@@ -408,7 +408,7 @@ function main() {
                     client = new CHaser();
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 20, , 21]);
+                    _a.trys.push([1, 8, , 9]);
                     return [4 /*yield*/, client.socket(HOST, PORT, NAME)];
                 case 2:
                     _a.sent();
@@ -417,57 +417,21 @@ function main() {
                     _a.sent();
                     _a.label = 4;
                 case 4:
-                    if (!true) return [3 /*break*/, 19];
+                    if (!true) return [3 /*break*/, 7];
                     return [4 /*yield*/, client.get_ready()];
                 case 5:
                     _a.sent();
                     return [4 /*yield*/, client.search_left()];
                 case 6:
                     _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 7:
-                    _a.sent();
-                    return [4 /*yield*/, client.search_up()];
-                case 8:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 9:
-                    _a.sent();
-                    return [4 /*yield*/, client.search_down()];
-                case 10:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 11:
-                    _a.sent();
-                    return [4 /*yield*/, client.look_right()];
-                case 12:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 13:
-                    _a.sent();
-                    return [4 /*yield*/, client.look_left()];
-                case 14:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 15:
-                    _a.sent();
-                    return [4 /*yield*/, client.look_up()];
-                case 16:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_ready()];
-                case 17:
-                    _a.sent();
-                    return [4 /*yield*/, client.look_down()];
-                case 18:
-                    _a.sent();
                     return [3 /*break*/, 4];
-                case 19: return [3 /*break*/, 21];
-                case 20:
+                case 7: return [3 /*break*/, 9];
+                case 8:
                     e_5 = _a.sent();
                     console.error("error in main: " + e_5);
                     process_1.exit();
-                    return [3 /*break*/, 21];
-                case 21: return [2 /*return*/];
+                    return [3 /*break*/, 9];
+                case 9: return [2 /*return*/];
             }
         });
     });

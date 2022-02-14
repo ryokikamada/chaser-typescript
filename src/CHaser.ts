@@ -157,35 +157,8 @@ async function main() {
         await client.get_atMark();
 
         while(true) {
-  
             await client.get_ready();
             await client.search_left();
-
-            await client.get_ready();
-            await client.search_up();
-            
-            await client.get_ready();
-            await client.search_down();
-
-            await client.get_ready();
-            await client.look_right();
-
-            await client.get_ready();
-            await client.look_left();
-
-            await client.get_ready();
-            await client.look_up();
-            
-            await client.get_ready();
-            await client.look_down();
-
-            // await client.get_ready();
-            // if(client.value[1] == 1){
-            //     await client.put_up();
-            // } else {
-            //     await client.walk_up();
-            // }
-            
         }
     } catch(e) {
         console.error(`error in main: ${e}`);
