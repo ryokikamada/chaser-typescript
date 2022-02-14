@@ -69,9 +69,9 @@ main();
 ```
 
 ### client.value[] 配列
-client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
+ゲットレディや行動の後に、client.value[]配列へ自動的に周辺情報が値で入ります。  
 
-### 情報
+### 周辺情報の値の意味
 | 値 | 意味 |
 ----|----
 | 0 | なにもなし |
