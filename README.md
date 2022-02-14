@@ -84,7 +84,13 @@ client.get_ready(), client.action_direction()の後にclient.value[]に自動的
   
 ### ロジック記述
 while(true){} ループの中に行動を書いてください。  
-ゲットレディ： await client.get_ready();  
+
+### ゲットレディ
+```TypeScript
+await client.get_ready();  
+```
+
+### 非同期処理
 JavaScript(TypeScript)はノンブロッキング処理です。  
 Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
 Promise処理のシンタックスシュガー async、awaitを使用。メイン関数の前にasyncと記述。awaitをPromise処理の前に必ず書いてください。  
