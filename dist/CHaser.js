@@ -418,8 +418,10 @@ function main() {
                     _a.label = 4;
                 case 4:
                     if (!true) return [3 /*break*/, 7];
+                    // Write your code here.
                     return [4 /*yield*/, client.get_ready()];
                 case 5:
+                    // Write your code here.
                     _a.sent();
                     return [4 /*yield*/, client.search_left()];
                 case 6:

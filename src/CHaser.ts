@@ -157,6 +157,7 @@ async function main() {
         await client.get_atMark();
 
         while(true) {
+            // Write your code here.
             await client.get_ready();
             await client.search_left();
         }
