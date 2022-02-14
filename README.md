@@ -1,4 +1,5 @@
-# chaser-typescript
+# U16プログラミングコンテスト
+# CHaserライブラリ(TypeScript版)
 
 ## 準備
 
@@ -13,7 +14,7 @@ npm -v
 npm install -D typescript @types/node@12
 ```
 
-### promise-socketのインストール
+### promise-socketライブラリを使用します
 ```
 npm install promise-socket
 ```
