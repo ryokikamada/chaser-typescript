@@ -70,13 +70,8 @@ main();
 ### value
 client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
 
-| TH1 | TH2 |
-----|----
-| TD1 | TD3 |
-| TD2 | TD4 |
- 
-| 左上 | 中上 | 右上 |
 |:---|:---:|---:|
+| 左上 | 中上 | 右上 |
 |左中 |中中 |右中 |
 |左下 |中下 |右下 |
 
