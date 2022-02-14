@@ -13,23 +13,34 @@ npm -v
 npm install -D typescript @types/node@12
 ```
 
-promise-socketのインストール
+### promise-socketのインストール
 ```
 npm install promise-socket
 ```
 
-トランスパイル（TypeScript => JavaScript）
+### tsconfig.jsonの準備
+```
+tsc --init
+```
+
+### tsconfig.jsonの修正
+```
+"sourceMap": true,
+"outDir": ./dist,
+```
+
+## トランスパイル（TypeScript => JavaScript）
 ```
 tsc
 ```
 
 
-実行方法
+## 実行方法
 ```
 node dist/CHaser.js
 ```
 
-mainループ
+## mainループ
 ```TypeScript:main()
 async function main() {
 
@@ -56,6 +67,7 @@ async function main() {
 main();
 ```
 
+## value
 client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
 
 |左上|中上|右上|  
@@ -69,10 +81,9 @@ client.get_ready(), client.action_direction()の後にclient.value[]に自動的
 | client.value[3] | client.value[4] | client.value[5] |  
 | client.value[6] | client.value[7] | client.value[8] |  
   
-  
+## ロジック記述
 while(true){} ループの中に行動を書いてください。  
 ゲットレディ： await client.get_ready();  
-
 JavaScript(TypeScript)はノンブロッキング処理です。  
 Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
 Promise処理のシンタックスシュガー async、awaitを使用。メイン関数の前にasyncと記述。awaitをPromise処理の前に必ず書いてください。  
