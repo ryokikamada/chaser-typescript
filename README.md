@@ -41,7 +41,7 @@ node dist/CHaser.js
 ```
 
 ## mainループ
-```TypeScript:main()
+```TypeScript
 async function main() {
 
     const HOST = "127.0.0.1";
