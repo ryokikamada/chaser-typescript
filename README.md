@@ -1,5 +1,18 @@
 # chaser-typescript
 
+## 準備
+
+### nodeをダウンロードし、インストールする。  
+```
+node -v
+npm -v
+```
+
+### TypeScriptと@typesをインストールする。（最後の12はnodeのバージョンに合わせる）
+```
+npm install -D typescript @types/node@12
+```
+
 promise-socketのインストール
 ```
 npm install promise-socket
