@@ -90,6 +90,15 @@ while(true){} ループの中に行動を書いてください。
 await client.get_ready();  
 ```
 
+### ルック
+| メソッド | 意味 |
+----|----
+| await client.look_up() | 上を見る |
+| await client.look_right() | 右を見る |
+| await client.look_left() | 左を見る |
+| await client.look_down() | 下を見る |
+
+
 ### 非同期処理
 JavaScript(TypeScript)はノンブロッキング処理です。  
 Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
