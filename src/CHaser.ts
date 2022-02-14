@@ -13,7 +13,7 @@ class CHaser {
         this.response = "";
         this.chunkSize_atMark = 3;
         this.chunkSize_response = 12;
-        this.value = [1,0,0,0,0,0,0,0,0,0];
+        this.value = [];
     }
 
     async socket(host:string, port: number, name: string)  {

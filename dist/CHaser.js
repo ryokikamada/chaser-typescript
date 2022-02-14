@@ -47,7 +47,7 @@ var CHaser = /** @class */ (function () {
         this.response = "";
         this.chunkSize_atMark = 3;
         this.chunkSize_response = 12;
-        this.value = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        this.value = [];
     }
     CHaser.prototype.socket = function (host, port, name) {
         return __awaiter(this, void 0, void 0, function () {
