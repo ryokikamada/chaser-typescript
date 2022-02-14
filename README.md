@@ -67,16 +67,25 @@ async function main() {
 main();
 ```
 
-### value
+### client.value[] 配列
 client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
 
+### 情報
+| 値 | 意味 |
+----|----
+| 0 | なにもなし |
+| 1 | 相手 |
+| 2 | ブロック |
+| 3 | アイテム |
 
+### 方向
 |場所|場所|場所|
 |:---|:---:|---:|
 |左上|中上|右上|
 |左中 |中中 |右中 |
 |左下 |中下 |右下 |
 
+### 配列
 | client.value[0] | client.value[1] | client.value[2] |  
 |:---|:---:|---:|
 | client.value[3] | client.value[4] | client.value[5] |  
@@ -90,6 +99,14 @@ while(true){} ループの中に行動を書いてください。
 await client.get_ready();  
 ```
 
+### ウォーク
+| メソッド | 意味 |
+----|----
+| await client.walk_up() | 上へ移動 |
+| await client.walk_right() | 右へ移動 |
+| await client.walk_left() | 左へ移動 |
+| await client.walk_down() | 下へ移動 |
+
 ### ルック
 | メソッド | 意味 |
 ----|----
@@ -97,6 +114,23 @@ await client.get_ready();
 | await client.look_right() | 右を見る |
 | await client.look_left() | 左を見る |
 | await client.look_down() | 下を見る |
+
+### サーチ
+| メソッド | 意味 |
+----|----
+| await client.search_up() | 上を探す |
+| await client.search_right() | 右を探す |
+| await client.search_left() | 左を探す |
+| await client.search_down() | 下を探す |
+
+### プット
+| メソッド | 意味 |
+----|----
+| await client.put_up() | 上に置く |
+| await client.put_right() | 右に置く |
+| await client.put_left() | 左に置く |
+| await client.put_down() | 下に置く |
+
 
 
 ### 非同期処理
