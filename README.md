@@ -1,7 +1,18 @@
 # chaser-typescript
 
+promise-socketのインストール
+```
+npm install promise-socket
+```
+
+トランスパイル（TypeScript => JavaScript）
+```
+tsc
+```
+
+
 実行方法
-```TypeScript:実行方法
+```
 node dist/CHaser.js
 ```
 
@@ -33,12 +44,11 @@ main();
 ```
 
 client.get_ready(), client.action_direction()の後にclient.value[]に自動的に値が入ります。  
-  
 
-| 左上 | 中上 | 右上 |  
-| :=: | :=: | :=: |  
-| 左中 | 中中 | 右中 |  
-| 左下 | 中下 | 右下 |  
+|左上|中上|右上|  
+|:=:|:=:|:=:|  
+|左中|中中|右中|  
+|左下|中下|右下|  
   
 
 | client.value[0] | client.value[1] | client.value[2] |  
