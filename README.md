@@ -1,5 +1,6 @@
 # U16プログラミングコンテスト
-# CHaserライブラリ(TypeScript版)
+## TypeScript版 CHaserライブラリ
+[CHaser.ts](https://github.com/ryokikamada/chaser-typescript/blob/main/src/CHaser.ts)
 
 ## 準備
 
