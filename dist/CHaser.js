@@ -41,15 +41,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var process_1 = require("process");
 var promise_socket_1 = __importDefault(require("promise-socket"));
-var CHaser = /** @class */ (function () {
-    function CHaser() {
+var default_1 = /** @class */ (function () {
+    function default_1() {
         this.promiseSocket = new promise_socket_1.default();
         this.response = "";
         this.chunkSize_atMark = 3;
         this.chunkSize_response = 12;
         this.value = [];
     }
-    CHaser.prototype.socket = function (host, port, name) {
+    default_1.prototype.socket = function (host, port, name) {
         return __awaiter(this, void 0, void 0, function () {
             var e_1;
             return __generator(this, function (_a) {
@@ -62,19 +62,19 @@ var CHaser = /** @class */ (function () {
                         return [4 /*yield*/, this.promiseSocket.writeAll(name)];
                     case 2:
                         _a.sent();
-                        console.log("connect: socket host:" + host + " port:" + port + " name:" + name);
+                        console.log("connect: socket host:".concat(host, " port:").concat(port, " name:").concat(name));
                         return [3 /*break*/, 4];
                     case 3:
                         e_1 = _a.sent();
-                        console.error("error: socket : " + e_1);
-                        process_1.exit();
+                        console.error("error: socket : ".concat(e_1));
+                        (0, process_1.exit)();
                         return [3 /*break*/, 4];
                     case 4: return [2 /*return*/];
                 }
             });
         });
     };
-    CHaser.prototype.get_atMark = function () {
+    default_1.prototype.get_atMark = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a, e_2;
             return __generator(this, function (_b) {
@@ -85,19 +85,19 @@ var CHaser = /** @class */ (function () {
                         return [4 /*yield*/, this.promiseSocket.read(this.chunkSize_atMark)];
                     case 1:
                         _a.response = _b.sent();
-                        console.log("response: " + this.response.toString().substring(0, 1));
+                        console.log("response: ".concat(this.response.toString().substring(0, 1)));
                         return [3 /*break*/, 3];
                     case 2:
                         e_2 = _b.sent();
-                        console.error("error: get_atMark : " + e_2);
-                        process_1.exit();
+                        console.error("error: get_atMark : ".concat(e_2));
+                        (0, process_1.exit)();
                         return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
                 }
             });
         });
     };
-    CHaser.prototype.get_ready = function () {
+    default_1.prototype.get_ready = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a, e_3;
             return __generator(this, function (_b) {
@@ -111,21 +111,21 @@ var CHaser = /** @class */ (function () {
                         return [4 /*yield*/, this.promiseSocket.read(this.chunkSize_response)];
                     case 2:
                         _a.response = _b.sent();
-                        console.log("response: get_ready : " + this.response.toString().substring(0, 10));
+                        console.log("response: get_ready : ".concat(this.response.toString().substring(0, 10)));
                         this.check_first_str();
                         this.make_value();
                         return [3 /*break*/, 4];
                     case 3:
                         e_3 = _b.sent();
-                        console.error("error: get_ready : " + e_3);
-                        process_1.exit();
+                        console.error("error: get_ready : ".concat(e_3));
+                        (0, process_1.exit)();
                         return [3 /*break*/, 4];
                     case 4: return [2 /*return*/];
                 }
             });
         });
     };
-    CHaser.prototype.send_sharp = function () {
+    default_1.prototype.send_sharp = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -137,7 +137,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.get_response = function () {
+    default_1.prototype.get_response = function () {
         return __awaiter(this, void 0, void 0, function () {
             var _a;
             return __generator(this, function (_b) {
@@ -147,7 +147,7 @@ var CHaser = /** @class */ (function () {
                         return [4 /*yield*/, this.promiseSocket.read(this.chunkSize_response)];
                     case 1:
                         _a.response = _b.sent();
-                        console.log("response: action : " + this.response.toString().substring(0, 10));
+                        console.log("response: action : ".concat(this.response.toString().substring(0, 10)));
                         this.check_first_str();
                         this.make_value();
                         return [2 /*return*/];
@@ -155,21 +155,21 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.check_first_str = function () {
+    default_1.prototype.check_first_str = function () {
         if (this.response.toString()[0] == '0') {
             console.log("Exit: the first str == 0");
-            process_1.exit();
+            (0, process_1.exit)();
         }
         else {
-            console.log("the first str == " + this.response.toString()[0]);
+            console.log("the first str == ".concat(this.response.toString()[0]));
         }
     };
-    CHaser.prototype.make_value = function () {
+    default_1.prototype.make_value = function () {
         this.value = Array.from(this.response.toString().substring(1, 10));
-        console.log("value : " + this.value);
+        console.log("value : ".concat(this.value));
     };
     // WALK
-    CHaser.prototype.walk_up = function () {
+    default_1.prototype.walk_up = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -181,7 +181,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.walk_right = function () {
+    default_1.prototype.walk_right = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -193,7 +193,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.walk_left = function () {
+    default_1.prototype.walk_left = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -205,7 +205,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.walk_down = function () {
+    default_1.prototype.walk_down = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -218,7 +218,7 @@ var CHaser = /** @class */ (function () {
         });
     };
     // LOOK
-    CHaser.prototype.look_up = function () {
+    default_1.prototype.look_up = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -230,7 +230,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.look_right = function () {
+    default_1.prototype.look_right = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -242,7 +242,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.look_left = function () {
+    default_1.prototype.look_left = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -254,7 +254,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.look_down = function () {
+    default_1.prototype.look_down = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -267,7 +267,7 @@ var CHaser = /** @class */ (function () {
         });
     };
     // SEARCH
-    CHaser.prototype.search_up = function () {
+    default_1.prototype.search_up = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -279,7 +279,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.search_right = function () {
+    default_1.prototype.search_right = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -291,7 +291,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.search_left = function () {
+    default_1.prototype.search_left = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -303,7 +303,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.search_down = function () {
+    default_1.prototype.search_down = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -316,7 +316,7 @@ var CHaser = /** @class */ (function () {
         });
     };
     // PUT
-    CHaser.prototype.put_up = function () {
+    default_1.prototype.put_up = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -328,7 +328,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.put_right = function () {
+    default_1.prototype.put_right = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -340,7 +340,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.put_left = function () {
+    default_1.prototype.put_left = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -352,7 +352,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.put_down = function () {
+    default_1.prototype.put_down = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -364,7 +364,7 @@ var CHaser = /** @class */ (function () {
             });
         });
     };
-    CHaser.prototype.action = function (order) {
+    default_1.prototype.action = function (order) {
         return __awaiter(this, void 0, void 0, function () {
             var e_4;
             return __generator(this, function (_a) {
@@ -386,57 +386,15 @@ var CHaser = /** @class */ (function () {
                         return [3 /*break*/, 6];
                     case 5:
                         e_4 = _a.sent();
-                        console.error("error: action " + order + " : " + e_4);
-                        process_1.exit();
+                        console.error("error: action ".concat(order, " : ").concat(e_4));
+                        (0, process_1.exit)();
                         return [3 /*break*/, 6];
                     case 6: return [2 /*return*/];
                 }
             });
         });
     };
-    return CHaser;
+    return default_1;
 }());
-function main() {
-    return __awaiter(this, void 0, void 0, function () {
-        var HOST, PORT, NAME, client, e_5;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    HOST = "127.0.0.1";
-                    PORT = 2009;
-                    NAME = "Your Name";
-                    client = new CHaser();
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 8, , 9]);
-                    return [4 /*yield*/, client.socket(HOST, PORT, NAME)];
-                case 2:
-                    _a.sent();
-                    return [4 /*yield*/, client.get_atMark()];
-                case 3:
-                    _a.sent();
-                    _a.label = 4;
-                case 4:
-                    if (!true) return [3 /*break*/, 7];
-                    // Write your code here.
-                    return [4 /*yield*/, client.get_ready()];
-                case 5:
-                    // Write your code here.
-                    _a.sent();
-                    return [4 /*yield*/, client.search_left()];
-                case 6:
-                    _a.sent();
-                    return [3 /*break*/, 4];
-                case 7: return [3 /*break*/, 9];
-                case 8:
-                    e_5 = _a.sent();
-                    console.error("error in main: " + e_5);
-                    process_1.exit();
-                    return [3 /*break*/, 9];
-                case 9: return [2 /*return*/];
-            }
-        });
-    });
-}
-main();
+exports.default = default_1;
 //# sourceMappingURL=CHaser.js.map

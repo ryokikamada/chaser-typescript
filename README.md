@@ -3,16 +3,18 @@
 
 ## 準備
 
-### node.jsをダウンロードし、インストールしてください。  
+### node.jsをダウンロードし、インストールしてください。
+[Node.js](https://nodejs.org/ja/)
+
 ### node.jsとnpmのバージョンを確認します。  
 ```
 node -v
 npm -v
 ```
 
-### TypeScriptと@typesをインストールする。（最後の12はnodeのバージョンに合わせる）
+### TypeScriptと@typesをインストールする。（最後の12はnode.jsのバージョンに合わせる）
 ```
-npm install -D typescript @types/node@12
+npm install -g typescript @types/node@12
 ```
 
 ### promise-socketライブラリを使用します
@@ -39,11 +41,13 @@ tsc
 
 ## 実行方法
 ```
-node dist/CHaser.js
+node dist/sample.js
 ```
 
-## mainループ
+## クライアント
 ```TypeScript
+import CHaser from "./CHaser";
+
 async function main() {
 
     const HOST = "127.0.0.1";
@@ -62,8 +66,7 @@ async function main() {
             await client.search_left();
         }
     } catch(e) {
-        console.error(`error in main: ${e}`);
-        exit();
+        console.error(`main : ${e}`);
     }
 }
 
@@ -150,6 +153,7 @@ while(true) {
 
 
 ### 非同期処理
-JavaScript(TypeScript)はノンブロッキング処理です。  
-Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
-Promise処理のシンタックスシュガー async、awaitを使用。メイン関数の前にasyncと記述。awaitをPromise処理の前に必ず書いてください。  
+- JavaScript(TypeScript)はノンブロッキング処理です。  
+- Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
+- Promise処理のシンタックスシュガー async、awaitを使用。
+- メイン関数の前にasyncと記述。awaitをPromise処理の前に必ず書いてください。  

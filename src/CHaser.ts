@@ -1,7 +1,7 @@
 import { exit } from "process";
 import PromiseSocket from "promise-socket";
 
-class CHaser {
+export default class {
     promiseSocket: any;
     response: any;
     chunkSize_atMark: number;
@@ -143,28 +143,3 @@ class CHaser {
         }
     }
 }
-
-async function main() {
-
-    const HOST = "127.0.0.1";
-    const PORT  = 2009;
-    const NAME = "Your Name";
-    
-    const client = new CHaser();
-    
-    try {
-        await client.socket(HOST, PORT, NAME);
-        await client.get_atMark();
-
-        while(true) {
-            // Write your code here.
-            await client.get_ready();
-            await client.search_left();
-        }
-    } catch(e) {
-        console.error(`error in main: ${e}`);
-        exit();
-    }
-}
-
-main();
