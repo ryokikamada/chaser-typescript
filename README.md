@@ -44,7 +44,7 @@ tsc
 node dist/sample.js
 ```
 
-## クライアント
+## クライアントコード
 ```TypeScript
 import CHaser from "./CHaser";
 
@@ -73,8 +73,8 @@ async function main() {
 main();
 ```
 
-### client.value[] 配列
-ゲットレディや行動の後に、client.value[]配列へ自動的に周辺情報が値で入ります。  
+### 周辺情報（client.value[] 配列）
+周辺情報はゲットレディや行動の後に、client.value[]配列へ自動的に下記の数値が入ります。  
 
 ### 周辺情報の値の意味
 | 値 | 意味 |
@@ -95,8 +95,6 @@ main();
 |:---|:---:|---:|
 | client.value[3] | client.value[4] | client.value[5] |  
 | client.value[6] | client.value[7] | client.value[8] |  
-  
- 
 
 ### ゲットレディ
 ```TypeScript
@@ -150,10 +148,8 @@ while(true) {
 | await client.put_left() | 左に置く |
 | await client.put_down() | 下に置く |
 
-
-
 ### 非同期処理
 - JavaScript(TypeScript)はノンブロッキング処理です。  
-- Socketを操作するためには、非同期処理が必要になります。非同期処理のため、promise-socketライブラリを使用しています。  
-- Promise処理のシンタックスシュガー async、awaitを使用。
-- メイン関数の前にasyncと記述。awaitをPromise処理の前に必ず書いてください。  
+- Socketを操作するためにpromise-socketライブラリを使用しています。  
+- 各メソッドの前にawaitを必ず付けてください。
+- awaitを含む関数の前には、asyncの記述が必要になります。
